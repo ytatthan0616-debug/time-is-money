@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useStudyState } from "@/hooks/useStudyState";
 import { MouthOfTruthFace } from "@/components/mouth-of-truth/MouthOfTruthFace";
-import { CoinJar } from "@/components/mouth-of-truth/CoinJar";
+import { CoinPile } from "@/components/mouth-of-truth/CoinPile";
 import { FallingCoin, type CoinInstance } from "@/components/mouth-of-truth/FallingCoin";
 import { TimerCard } from "@/components/timer/TimerCard";
 
@@ -64,7 +64,7 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10">
-        <CoinJar totalCoins={totalCoins} totalStudySeconds={state.totalStudySeconds} />
+        <CoinPile totalCoins={totalCoins} totalStudySeconds={state.totalStudySeconds} />
       </div>
     </section>
   );
