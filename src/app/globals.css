@@ -27,15 +27,18 @@ body {
 
 @keyframes coin-fall {
   0% {
-    top: 38%;
+    top: 0%;
     transform: translate(-50%, 0) rotate(0deg);
     opacity: 0;
   }
-  10% {
+  8% {
+    opacity: 1;
+  }
+  92% {
     opacity: 1;
   }
   100% {
-    top: 88%;
+    top: 100%;
     transform: translate(calc(-50% + var(--drift)), 0) rotate(360deg);
     opacity: 0;
   }

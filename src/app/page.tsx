@@ -1,5 +1,4 @@
-import { TimerCard } from "@/components/timer/TimerCard";
-import { MouthOfTruth } from "@/components/mouth-of-truth/MouthOfTruth";
+import { HeroSection } from "@/components/hero/HeroSection";
 import { StatsPanel } from "@/components/stats/StatsPanel";
 import { WageProjectionChart } from "@/components/stats/WageProjectionChart";
 import { SettingsPanel } from "@/components/settings/SettingsPanel";
@@ -7,32 +6,25 @@ import { AdSlot } from "@/components/ads/AdSlot";
 
 export default function Home() {
   return (
-    <main className="mx-auto flex w-full max-w-4xl flex-1 flex-col gap-6 px-4 py-8 sm:px-6">
-      <div className="text-center">
-        <h1 className="text-2xl font-bold text-zinc-900 sm:text-3xl">
+    <main className="flex w-full flex-1 flex-col bg-white">
+      <div className="mx-auto w-full max-w-2xl px-4 pt-8 text-center">
+        <h1 className="text-xl font-bold text-zinc-900 sm:text-2xl">
           勉強時間を、将来の年収アップに変えよう
         </h1>
-        <p className="mt-2 text-sm text-zinc-500">
+        <p className="mt-2 text-xs text-zinc-500 sm:text-sm">
           タイマーで勉強時間を計測すると、真実の口からコインが降ってきます。
-          貯まったコインは、将来得られる賃金の上昇として可視化されます。
         </p>
       </div>
 
-      <AdSlot slot="0000000000" className="h-24 w-full" />
+      <HeroSection />
 
-      <div className="grid gap-6 lg:grid-cols-2">
-        <div className="flex flex-col gap-6">
-          <TimerCard />
-          <MouthOfTruth />
-        </div>
-        <div className="flex flex-col gap-6">
-          <StatsPanel />
-          <WageProjectionChart />
-          <SettingsPanel />
-        </div>
+      <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 pb-12">
+        <AdSlot slot="0000000000" className="h-24 w-full" />
+        <StatsPanel />
+        <WageProjectionChart />
+        <SettingsPanel />
+        <AdSlot slot="0000000001" className="h-24 w-full" />
       </div>
-
-      <AdSlot slot="0000000001" className="h-24 w-full" />
     </main>
   );
 }

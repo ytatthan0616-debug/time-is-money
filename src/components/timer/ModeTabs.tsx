@@ -21,7 +21,7 @@ export function ModeTabs({
     <div
       role="tablist"
       aria-label="タイマーモード"
-      className="grid grid-cols-3 gap-1 rounded-full bg-amber-100 p-1 text-sm font-medium"
+      className="grid grid-cols-3 gap-1 rounded-full bg-amber-100 p-1 text-xs font-medium sm:text-sm"
     >
       {MODES.map((m) => {
         const active = m.key === mode;
@@ -33,7 +33,7 @@ export function ModeTabs({
             aria-selected={active}
             disabled={disabled && !active}
             onClick={() => onChange(m.key)}
-            className={`rounded-full px-2 py-2 transition-colors sm:px-4 ${
+            className={`whitespace-nowrap rounded-full px-1.5 py-2 transition-colors sm:px-4 ${
               active
                 ? "bg-amber-500 text-white shadow"
                 : "text-amber-900 hover:bg-amber-200 disabled:cursor-not-allowed disabled:opacity-50"

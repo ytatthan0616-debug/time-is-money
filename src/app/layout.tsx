@@ -96,7 +96,7 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body className="min-h-full flex flex-col bg-amber-50/40">
+      <body className="min-h-full flex flex-col bg-white">
         <StudyStateProvider>
           <Header />
           {children}

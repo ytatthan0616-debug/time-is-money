@@ -30,7 +30,7 @@ export function TimerCard() {
   const pomodoroCycle = state.session?.pomodoroCycle ?? 0;
 
   return (
-    <section className="rounded-3xl border border-amber-200 bg-white/80 p-6 shadow-sm backdrop-blur">
+    <section className="relative w-full max-w-md px-6 py-4 text-center">
       <ModeTabs mode={mode} disabled={isRunning} onChange={setMode} />
 
       {mode === "pomodoro" && (
