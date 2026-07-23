@@ -30,7 +30,7 @@ export function TimerCard() {
   const pomodoroCycle = state.session?.pomodoroCycle ?? 0;
 
   return (
-    <section className="relative w-full max-w-md px-6 py-4 text-center">
+    <section className="relative w-full max-w-lg px-6 py-4 text-center">
       <ModeTabs mode={mode} disabled={isRunning} onChange={setMode} />
 
       {mode === "pomodoro" && (
@@ -46,7 +46,7 @@ export function TimerCard() {
       )}
 
       <div className="my-8 text-center">
-        <span className="font-mono text-6xl font-bold tabular-nums text-zinc-900 sm:text-7xl">
+        <span className="font-mono text-8xl font-bold tabular-nums text-zinc-900 drop-shadow-sm sm:text-9xl">
           {formatClock(displaySeconds)}
         </span>
         {!isStudying && mode === "pomodoro" && (
@@ -59,7 +59,7 @@ export function TimerCard() {
           <button
             type="button"
             onClick={pause}
-            className="rounded-full bg-zinc-900 px-8 py-3 font-semibold text-white transition-colors hover:bg-zinc-700"
+            className="rounded-full bg-zinc-900 px-10 py-4 text-lg font-semibold text-white transition-colors hover:bg-zinc-700"
           >
             一時停止
           </button>
@@ -67,7 +67,7 @@ export function TimerCard() {
           <button
             type="button"
             onClick={start}
-            className="rounded-full bg-amber-500 px-8 py-3 font-semibold text-white transition-colors hover:bg-amber-600"
+            className="rounded-full bg-amber-500 px-10 py-4 text-lg font-semibold text-white shadow-md transition-colors hover:bg-amber-600"
           >
             {isCompleted ? "もう一度スタート" : "スタート"}
           </button>
@@ -75,7 +75,7 @@ export function TimerCard() {
         <button
           type="button"
           onClick={reset}
-          className="rounded-full border border-zinc-300 px-8 py-3 font-semibold text-zinc-700 transition-colors hover:bg-zinc-100"
+          className="rounded-full border border-zinc-300 px-10 py-4 text-lg font-semibold text-zinc-700 transition-colors hover:bg-zinc-100"
         >
           リセット
         </button>

@@ -26,7 +26,7 @@ export function FallingCoin({
           animationDelay: `${delay}s`,
         } as React.CSSProperties
       }
-      className="coin-fall pointer-events-none absolute left-1/2 top-0 h-6 w-6 -translate-x-1/2 rounded-full border-2 border-amber-300 bg-gradient-to-br from-yellow-300 to-amber-500 text-center text-[10px] font-bold leading-5 text-amber-800 shadow"
+      className="coin-fall pointer-events-none absolute left-1/2 top-0 h-9 w-9 -translate-x-1/2 rounded-full border-2 border-amber-300 bg-gradient-to-br from-yellow-300 to-amber-500 text-center text-sm font-bold leading-8 text-amber-800 shadow"
     >
       ¥
     </span>

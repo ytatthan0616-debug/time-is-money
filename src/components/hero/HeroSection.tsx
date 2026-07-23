@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useStudyState } from "@/hooks/useStudyState";
 import { MouthOfTruthFace } from "@/components/mouth-of-truth/MouthOfTruthFace";
-import { CoinPile } from "@/components/mouth-of-truth/CoinPile";
+import { CoinJar } from "@/components/mouth-of-truth/CoinJar";
 import { FallingCoin, type CoinInstance } from "@/components/mouth-of-truth/FallingCoin";
 import { TimerCard } from "@/components/timer/TimerCard";
 
@@ -26,7 +26,7 @@ export function HeroSection() {
 
     const newCoins: CoinInstance[] = Array.from({ length: Math.min(diff, 8) }, () => ({
       id: nextId.current++,
-      drift: (Math.random() - 0.5) * 60,
+      drift: (Math.random() - 0.5) * 40,
       duration: 1.5 + Math.random() * 0.5,
       delay: Math.random() * 0.15,
     }));
@@ -42,21 +42,30 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative flex min-h-[75vh] w-full flex-col items-center bg-white">
-      <div className="pt-8">
-        <MouthOfTruthFace dropping={dropping} />
+    <section className="relative flex min-h-[80vh] w-full flex-col items-center overflow-hidden bg-white">
+      {/* 真実の口: 背景に薄く存在 */}
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 flex justify-center opacity-[0.08]"
+        aria-hidden="true"
+      >
+        <MouthOfTruthFace dropping={dropping} className="h-72 w-72 sm:h-[26rem] sm:w-[26rem]" />
       </div>
 
-      <div className="relative flex w-full flex-1 items-center justify-center">
+      {/* タイマー: 前面に大きく */}
+      <div className="relative z-10 flex w-full flex-1 items-center justify-center">
         <TimerCard />
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-          {coins.map((coin) => (
-            <FallingCoin key={coin.id} coin={coin} onDone={removeCoin} />
-          ))}
-        </div>
       </div>
 
-      <CoinPile totalCoins={totalCoins} totalStudySeconds={state.totalStudySeconds} />
+      {/* コインが口から瓶まで落ちる通り道 */}
+      <div className="pointer-events-none absolute inset-0 z-10 overflow-hidden" aria-hidden="true">
+        {coins.map((coin) => (
+          <FallingCoin key={coin.id} coin={coin} onDone={removeCoin} />
+        ))}
+      </div>
+
+      <div className="relative z-10">
+        <CoinJar totalCoins={totalCoins} totalStudySeconds={state.totalStudySeconds} />
+      </div>
     </section>
   );
 }

@@ -1,11 +1,12 @@
-export function MouthOfTruthFace({ dropping }: { dropping: boolean }) {
+export function MouthOfTruthFace({
+  dropping,
+  className = "h-40 w-40 sm:h-48 sm:w-48",
+}: {
+  dropping: boolean;
+  className?: string;
+}) {
   return (
-    <svg
-      viewBox="0 0 200 200"
-      className="h-40 w-40 drop-shadow-md sm:h-48 sm:w-48"
-      aria-label="真実の口"
-      role="img"
-    >
+    <svg viewBox="0 0 200 200" className={className} aria-label="真実の口" role="img">
       <defs>
         <radialGradient id="stone" cx="35%" cy="30%" r="75%">
           <stop offset="0%" stopColor="#e8ddc7" />
