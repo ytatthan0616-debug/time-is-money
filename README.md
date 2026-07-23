@@ -44,6 +44,20 @@ npm run build
 npm run start
 ```
 
+## 本番デプロイ（Vercel）
+
+1. [vercel.com/new](https://vercel.com/new) にアクセスし、GitHubアカウントでログイン
+2. `time-is-money` リポジトリを Import
+3. 「Environment Variables」で以下を設定してから Deploy
+   | 変数名 | 値 |
+   | --- | --- |
+   | `NEXT_PUBLIC_ADSENSE_CLIENT` | `ca-pub-2071457256389322` |
+   | `NEXT_PUBLIC_SITE_URL` | 一旦空でOK（デプロイ後に発行されるURLを設定して再デプロイ） |
+4. デプロイ完了後に発行されるURL（例: `https://time-is-money.vercel.app`）を確認し、Vercelの Project Settings → Environment Variables で `NEXT_PUBLIC_SITE_URL` をそのURLに更新 → 再デプロイ
+5. Google AdSenseの管理画面で本サイトを「サイト」として追加し、審査を申請する
+   - `public/ads.txt`（パブリッシャーID `pub-2071457256389322` を含む）は既にリポジトリに含まれているため追加設定は不要
+6. カスタムドメインを使う場合は Vercel の Project Settings → Domains で追加し、`NEXT_PUBLIC_SITE_URL` もそのドメインに合わせて更新する
+
 ## 技術スタック
 
 - Next.js (App Router) / TypeScript / Tailwind CSS
