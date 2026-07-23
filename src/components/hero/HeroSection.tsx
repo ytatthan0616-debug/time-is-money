@@ -56,7 +56,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <CoinPile totalCoins={totalCoins} />
+      <CoinPile totalCoins={totalCoins} totalStudySeconds={state.totalStudySeconds} />
     </section>
   );
 }

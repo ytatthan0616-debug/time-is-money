@@ -1,7 +1,4 @@
 import { HeroSection } from "@/components/hero/HeroSection";
-import { StatsPanel } from "@/components/stats/StatsPanel";
-import { WageProjectionChart } from "@/components/stats/WageProjectionChart";
-import { SettingsPanel } from "@/components/settings/SettingsPanel";
 import { AdSlot } from "@/components/ads/AdSlot";
 
 export default function Home() {
@@ -20,9 +17,6 @@ export default function Home() {
 
       <div className="mx-auto flex w-full max-w-2xl flex-col gap-6 px-4 pb-12">
         <AdSlot slot="0000000000" className="h-24 w-full" />
-        <StatsPanel />
-        <WageProjectionChart />
-        <SettingsPanel />
         <AdSlot slot="0000000001" className="h-24 w-full" />
       </div>
     </main>
